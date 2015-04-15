@@ -1,0 +1,50 @@
+<!-- http://www.quickmeme.com/img/0b/0b1b0ec2cf08fd3c841c2cf4051ffa3887284d6e3eeec6b8d24741135dc3bbd8.jpg ->
+
+<!-- Ajax Request -->
+<script>
+$.ajax({
+  dataType: "jsonp",
+  url: "http://www.behance.net/v2/users?client_id=HVUULVvxeDlACdr5or1rYJaoDYm16s5d&sort=appreciations&field=art%2Bdirection&country=PT"
+}).done(function(result) {
+  console.log(result);
+});
+</script>
+
+<!-- Display results -->
+
+<aside>
+  <form id="city_search"><input type="text" id="city_name" autofocus autocomplete="off" placeholder="City"></form>
+  <div class="results">
+    <div id="behancers"></div>
+  </div>
+</aside>
+
+<!--  Better search -->
+
+<script>
+    function search(city) {
+
+      console.log("Searching in "+city);
+      $.getJSON(api_endpoint+"/users?callback=?&sort="+sort_by+"&field="+fields+"&country="+country+"&city="+city+"&client_id="+api_client_key, function(users) {
+        showUsers(users.users);
+      });
+
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null);
+      }
+
+      geocoder.geocode( { 'address': city}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              map.setCenter(results[0].geometry.location);
+              var marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location,
+                  title: city
+              });
+              markers.push(marker);
+            } else {
+              alert("Geocode was not successful for the following reason: " + status);
+            }
+          });
+    }
+ </script>
