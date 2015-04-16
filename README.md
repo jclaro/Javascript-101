@@ -190,14 +190,15 @@ startup.firstChild.style.padding = '20px';
 
 https://jsfiddle.net/07Lw2Lg6/
 
-Recorrendo a JavaScript
-1. Alterar a font-family do body para "Arial, sans-serif"
+Recorrendo a JavaScript:
+
+1) Alterar a font-family do body para "Arial, sans-serif"
 
 ```javascript
 document.body.style.fontFamily = 'Arial, sans-serif';
 ```
 
-2. Substituir cada uma das spans (nickname, favorites, hometown) com a tua informação
+2) Substituir cada uma das spans (nickname, favorites, hometown) com a tua informação
 
 ```javascript
 document.getElementById('nickname').innerHTML = 'Shark';
@@ -205,7 +206,7 @@ document.getElementById('favorites').innerHTML = 'Web Development';
 document.getElementById('hometown').innerHTML = 'Coimbra, Portugal';
 ```
 
-3. Iterar cada <li> e mudar a class para "listitem"
+3) Iterar cada <li> e mudar a class para "listitem"
 
 ```javascript
 var items = document.getElementsByTagName('li');
@@ -214,7 +215,7 @@ for (var i = 0; i < items.length; i++) {
 }
 ```
 
-4. Adicionar um estilo CSS "listitem" para uma cor à vossa escolha.
+4) Adicionar um estilo CSS "listitem" para uma cor à vossa escolha.
 
 ```css
 .listitem {
@@ -222,7 +223,7 @@ for (var i = 0; i < items.length; i++) {
 }
 ```
 
-5. Criar um elemento <img> e definir o seu atributo src para uma imagem tua.
+5) Criar um elemento <img> e definir o seu atributo src para uma imagem tua.
 
 ```javascript
 var myPic = document.createElement('img'); // Cria um novo elemento HTML, fora do DOM
@@ -231,7 +232,7 @@ myPic.width = '300';
 myPic.height = '300';
 ```
 
-6. Juntar esse elemento à página
+6) Juntar esse elemento à página
 
 ```javascript
 document.body.appendChild(myPic); // Adiciona ao body (que está no DOM), o novo elemento criado
