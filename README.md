@@ -132,9 +132,9 @@ p = document.querySelector("#fancy pickle");
 p.style.width = "50px"
 ```
 
-## Exercícios
+# Exercícios
 
-# Logo Hijack
+## Logo Hijack
 
 http://google.com/
 
@@ -157,7 +157,7 @@ button = document.getElementsByName('btnK')[0];
 button.value = "Yahooo!";
 ```
 
-# Bigger Button
+## Bigger Button
 
 http://www.portugalstartupjobs.pt/
 
@@ -184,4 +184,64 @@ var startups = jobseeker.previousSibling.previousSibling; // agora sim
 // var startup = jobseeker.previousElementSibling; // navega para o nó irmão anterior, do mesmo tipo (neste caso: button)
 startup.firstChild.style.padding = '20px';
 ```
+
+## About me
+
+
+https://jsfiddle.net/07Lw2Lg6/
+
+Recorrendo a JavaScript
+1. Alterar a font-family do body para "Arial, sans-serif"
+
+```javascript
+document.body.style.fontFamily = 'Arial, sans-serif';
+```
+
+2. Substituir cada uma das spans (nickname, favorites, hometown) com a tua informação
+
+```javascript
+document.getElementById('nickname').innerHTML = 'Shark';
+document.getElementById('favorites').innerHTML = 'Web Development';
+document.getElementById('hometown').innerHTML = 'Coimbra, Portugal';
+```
+
+3. Iterar cada <li> e mudar a class para "listitem"
+
+```javascript
+var items = document.getElementsByTagName('li');
+for (var i = 0; i < items.length; i++) {
+    items[i].className = 'listitem';
+}
+```
+
+4. Adicionar um estilo CSS "listitem" para uma cor à vossa escolha.
+
+```css
+.listitem {
+	color: blue;
+}
+```
+
+5. Criar um elemento <img> e definir o seu atributo src para uma imagem tua.
+
+```javascript
+var myPic = document.createElement('img'); // Cria um novo elemento HTML, fora do DOM
+myPic.src = 'http://www.troll.me/images/mah-nigga/your-going-for-advanced-javascript-concepts-mah-nigga.jpg';
+myPic.width = '300';
+myPic.height = '300';
+```
+
+6. Juntar esse elemento à página
+
+```javascript
+document.body.appendChild(myPic); // Adiciona ao body (que está no DOM), o novo elemento criado
+}
+```
+
+
+
+
+
+
+
 
