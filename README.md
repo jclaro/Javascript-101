@@ -93,13 +93,13 @@ mudar para
 
 ```html
 <div id="box1" class="box show">
-            <div class="item">
+            <div class="item" post="first_post">
 ```
 
 ```javascript
 // By Id
-post1 = document.getElementById("post1");
-post1.style.border = "solid 2px #ccc";
+first_post = document.getElementById("first_post");
+first_post.style.border = "solid 2px #ccc";
 
 
 // By Class Name
@@ -120,9 +120,9 @@ images[0].style.height = "100px";
 
 // Alternative approach
 
-post1_image = post1.getElementsByTagName("img")[0];
-post1_image.style.width = "70px";
-post1_image.style.height = "70px";
+first_post_image = first_post.getElementsByTagName("img")[0];
+first_post_image.style.width = "70px";
+first_post_image.style.height = "70px";
 ```
 
 http://flukeout.github.io/
@@ -134,7 +134,7 @@ p.style.width = "50px"
 
 ## Exercícios
 
-# Logo Hihack
+# Logo Hijack
 
 http://google.com/
 
@@ -162,7 +162,8 @@ button.value = "Yahooo!";
 http://www.portugalstartupjobs.pt/
 
 1. Alterar o padding do botão I’M A STARTUP para 20px
-2. Usando os seguintes métodos (não necessariamente por esta ordem):
+2. Usando **obrigatoriamente** os seguintes métodos (não necessariamente por esta ordem):
+
 * getElement(s)By?
 * previousSibling
 * childNodes
@@ -172,14 +173,14 @@ Possível solução: Uma vez que temos que usar o childNodes começamos por proc
 // Possível solução
 var buttons = document.getElementsByClassName('buttons')[0];
 ```
-Quantos/quais são os nós filhos deste elemento?
+Quantos/quais são os nós filhos do nó/elemento HTML buttons?
 
 ```javascript
 var jobseeker = buttons.childNodes[3]; // este ainda não é o nosso botão
 ```
 
 ```javascript
-var startups = jobseeker.previousSibling.previousSibling;
+var startups = jobseeker.previousSibling.previousSibling; // agora sim
 // var startup = jobseeker.previousElementSibling; // navega para o nó irmão anterior, do mesmo tipo (neste caso: button)
 startup.firstChild.style.padding = '20px';
 ```
