@@ -236,13 +236,53 @@ myPic.height = '300';
 
 ```javascript
 document.body.appendChild(myPic); // Adiciona ao body (que está no DOM), o novo elemento criado
+```
+
+### Bónus: Eventos
+
+Capturar o evento de clique sobre o nosso elemento imagem, alterando-o (a sua source) alternadamente
+
+```javascript
+var toggle = true;
+myPic.onclick = function() {
+    if(toggle === true) {
+        myPic.src = 'http://www.barbarianmeetscoding.com/images/i-know-javascript.jpg';
+        toggle = false;
+    } else {
+        myPic.src = 'http://www.quickmeme.com/img/e4/e474b75342e5a27b7cdcf3ce8f897908bd4f40b06208803f6e795018d823adcd.jpg';
+        toggle = true;
+    }
 }
 ```
 
 
+## jQuery
 
+http://pt.wikipedia.org/wiki/JQuery
 
+Em JavaScript
 
+```javascript
+var body = document.body;
+var body = document.getElementsByTagName("body")[0];
+body.innerHTML = "Wiki down";
+body.style.fontSize = "64px"; // We're just using basic CSS property names here. The only difference is that where you would normally find a dash('-') the text is camel-cased. So instead of 'margin-top' we use 'marginTop'.
+//body.style['font-size'] = "64px";
+body.style.display = "none";
+```
 
+Equivalente em jQuery
 
+```javascript
+var body = $("body");
+body.html("Wiki down");
+body.css("font-size", "64px");
+body.hide();
+```
+
+Ou
+
+```javascript
+$("body").html("Wiki down").css("font-size", "64px").hide();
+```
 
